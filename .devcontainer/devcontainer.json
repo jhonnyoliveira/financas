@@ -1,0 +1,10 @@
+{
+  "name": "financas",
+  "build": { "dockerfile": "Dockerfile" },
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "CGO_ENABLED": "0",
+    "GOFLAGS": "-buildvcs=false"
+  },
+  "postCreateCommand": "go version"
+}
