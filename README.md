@@ -133,10 +133,23 @@ Uma issue só está concluída quando:
 
 As issues estão em `issues/`, numeradas para sugerir ordem de execução. A ordem é um guia; dependências declaradas em cada issue prevalecem.
 
-## Execução (após implementação)
+## Execução em modo console
 
 ```bash
-go run ./cmd/financas --console --config ./configs/config.example.toml
+go run ./cmd/financas --console
+```
+
+O modo console permanece em execução até receber `Ctrl+C`. Para consultar as
+opções disponíveis ou a versão do executável:
+
+```bash
+go run ./cmd/financas --help
+go run ./cmd/financas --version
+```
+
+Para executar a suíte de testes e gerar o binário para Windows:
+
+```bash
 go test ./...
 GOOS=windows GOARCH=amd64 CGO_ENABLED=0 go build -o financas.exe ./cmd/financas
 ```
